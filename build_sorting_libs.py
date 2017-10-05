@@ -46,10 +46,12 @@ def gencode_flags():
     GENCODE_SM50 = GENCODE_SMXX.format(CC=50)
     GENCODE_SM52 = GENCODE_SMXX.format(CC=52)
     GENCODE_SM53 = GENCODE_SMXX.format(CC=53)
+    GENCODE_SM60 = GENCODE_SMXX.format(CC=60)
+    GENCODE_SM61 = GENCODE_SMXX.format(CC=61)
 
     # Provide forward-compatibility to architectures beyond CC 5.3
     GENCODE_COMPUTEXX = "-gencode arch=compute_{CC},code=compute_{CC}"
-    GENCODE_COMPUTE53 = GENCODE_COMPUTEXX.format(CC=53)
+    GENCODE_COMPUTE61 = GENCODE_COMPUTEXX.format(CC=61)
 
     # Concatenate flags
     SM = []
@@ -60,7 +62,9 @@ def gencode_flags():
     SM.append(GENCODE_SM50)
     SM.append(GENCODE_SM52)
     SM.append(GENCODE_SM53)
-    SM.append(GENCODE_COMPUTE53)
+    SM.append(GENCODE_SM60)
+    SM.append(GENCODE_SM61)
+    SM.append(GENCODE_COMPUTE61)
     return ' '.join(SM)
 
 
