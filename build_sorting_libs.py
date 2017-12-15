@@ -39,7 +39,6 @@ def library_extension():
 def gencode_flags():
     # Generate code for all known architectures
     GENCODE_SMXX = "-gencode arch=compute_{CC},code=sm_{CC}"
-    GENCODE_SM20 = GENCODE_SMXX.format(CC=20)
     GENCODE_SM30 = GENCODE_SMXX.format(CC=30)
     GENCODE_SM35 = GENCODE_SMXX.format(CC=35)
     GENCODE_SM37 = GENCODE_SMXX.format(CC=37)
@@ -55,7 +54,6 @@ def gencode_flags():
 
     # Concatenate flags
     SM = []
-    SM.append(GENCODE_SM20)
     SM.append(GENCODE_SM30)
     SM.append(GENCODE_SM35)
     SM.append(GENCODE_SM37)
